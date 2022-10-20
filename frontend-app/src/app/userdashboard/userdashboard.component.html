@@ -1,0 +1,21 @@
+<div class="container mt-3 text-dark rounded">
+  <h2>Welcome to Drive Away Ltd User Portal <b>{{ user }}</b></h2>
+
+  <br />
+  <button class ="btn btn-warning" (click)="flago()">Sell You Car</button>
+  <br/><br/>
+  <div *ngIf="flagos"><app-add-product></app-add-product></div>
+  <br/>
+  <span *ngFor="let p of products">
+    <img src="{{ p.url }}" width="300px" height="300px" />
+    &nbsp;
+    <span style="font-size: larger" class= "text-light bg-dark">{{ p.pname }} {{ p.price }}</span>
+    &nbsp;
+    <input type="button" class="btn btn-success" value="Buy" (click)="deleteProduct(p.pid)" />
+    <br/>
+    <br/>
+    <br/>
+  </span>
+
+  <input class="btn btn-danger" type="button" value="Logout" (click)="logout()" />
+</div>

@@ -1,0 +1,19 @@
+<div class="container mt-3 text-dark rounded">
+    <h2>Add Product</h2>
+    <br/>
+    <form [formGroup]="productRef" (ngSubmit)="storeProduct()">
+        <label>Car Name: &nbsp;</label>
+        <input type="text" formControlName="pname"><br/>
+        <br/>
+        <label>Price &nbsp;</label>
+        <input type="number" formControlName="price"><br/>
+        <br/>
+        <label>URL &nbsp;</label>
+        <input type="url" formControlName="url"><br/>
+        <br/>
+        <input class="btn btn-success" type="submit" value=" Add Product"/><br/>
+        <br/>
+        <input class="btn btn-danger" type="reset" value=" Reset"/><br/>
+    </form><br/>
+    <span style="color:red">{{storeMsg}}</span>
+</div>
